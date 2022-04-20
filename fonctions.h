@@ -15,6 +15,8 @@ void voisinage(reseau *r,bmu bm, int rayon, double alpha, int pos, bdd b);
 int calculer_rayon(int iteration, int phase1, int rayon);
 void affecte_valeur(reseau *r,bmu bm, int pos, bdd b);
 void affiche_res(reseau *r);
+void stat (reseau *r, bmu bm, int pos, bdd b);
+void affecte_valeur_fin(reseau *r,bmu bm, int pos, bdd b);
 void afficherListe(liste_bmus *liste);
 void suppression(liste_bmus *liste);
 void insertion(liste_bmus *liste, int ligne, int colonne);
