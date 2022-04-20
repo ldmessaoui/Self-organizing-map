@@ -18,8 +18,8 @@ int main(){
     int iteration_totale =500*b.taille_vect; 
     apprentissage(b,r,iteration_totale);
     
-    /*printf("------------------------Fin------------------------\n");
-    affiche_res(r);*/
+    printf("------------------------Fin------------------------\n");
+    affiche_res(r);
 
     
     return 0;
