@@ -120,7 +120,26 @@ void affecte_valeur(reseau *r,bmu bm, int pos, bdd b){
     }
 }
 
-
+void affecte_valeur_fin(reseau *r,bmu bm, int pos, bdd bd){
+    if (r->Reseau[bm.ligne][bm.colonne].val[0]>r->Reseau[bm.ligne][bm.colonne].val[1] && r->Reseau[bm.ligne][bm.colonne].val[0]>r->Reseau[bm.ligne][bm.colonne].val[2]){
+        r->Reseau[bm.ligne][bm.colonne].etiquette="S";
+    }
+    else {
+        if (r->Reseau[bm.ligne][bm.colonne].val[1]>r->Reseau[bm.ligne][bm.colonne].val[0] && r->Reseau[bm.ligne][bm.colonne].val[1]>r->Reseau[bm.ligne][bm.colonne].val[2]){
+            r->Reseau[bm.ligne][bm.colonne].etiquette="V";
+        }
+        else{
+            if (r->Reseau[bm.ligne][bm.colonne].val[2]>r->Reseau[bm.ligne][bm.colonne].val[0] && r->Reseau[bm.ligne][bm.colonne].val[2]>r->Reseau[bm.ligne][bm.colonne].val[1]){
+                r->Reseau[bm.ligne][bm.colonne].etiquette="G";
+            }
+            else {
+                r->Reseau[bm.ligne][bm.colonne].etiquette="*";
+            }
+            
+        }
+            
+    }
+}
 
 
 void affiche_res(reseau *r){
@@ -134,7 +153,19 @@ void affiche_res(reseau *r){
     }   
 }
 
-
+void stat (reseau *r, bmu bm, int pos, bdd bd){
+    if (strcmp(bd.vecteur[pos].nom,"Iris-setosa\n")==0){
+        r->Reseau[bm.ligne][bm.colonne].val[0]+=1;
+    }
+    else{
+        if(strcmp(bd.vecteur[pos].nom,"Iris-versicolor\n")==0){
+            r->Reseau[bm.ligne][bm.colonne].val[1]+=1;
+        }
+        else{
+            r->Reseau[bm.ligne][bm.colonne].val[2]+=1;
+        }
+    }
+}
 
 
 
