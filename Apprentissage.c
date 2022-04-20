@@ -59,7 +59,16 @@ void apprentissage( bdd b, reseau *r, int nb_iteration){
     }
 
    
-    
+    for (ind=0;ind<b.nbr_lignes;ind++){
+        bm = trouver_le_bmu(r,b,ind);
+        stat(r,bm,ind,b);
+    }
+
+    int nb;
+    for (nb=0;nb<b.nbr_lignes;nb++){
+        // bm=trouver_le_bmu(r,b,nb);
+        affecte_valeur_fin(r,bm,nb,b);
+    }
     
 }
 
