@@ -27,6 +27,10 @@
 
     FILE *dataset;
     dataset=fopen("iris.data", "r");
+        if (dataset== NULL){
+        printf("Fille cannot be open");
+        exit(EXIT_FAILURE);
+    }
     char *sep=",";
     char *v;
     char *token;
